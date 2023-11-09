@@ -13,10 +13,14 @@ int main(void) {
     
     srand(time(0));
     int aflustspil = 0;
+    int uafgjorte = 0;
+    int vundet = 0;
+    int tabte = 0;
     
     //    0="sten"
     //    1="saks"
     //    2="papir"
+    
     while (aflustspil == 0) {
         int cvalg = rand() % 3;
         
@@ -31,13 +35,13 @@ int main(void) {
         
         switch(valg) {
             case 0:
-                printf("Du valgte Sten\n");
+                printf("\nDu valgte Sten\n");
                 break;
             case 1:
-                printf("Du valgte Saks\n");
+                printf("\nDu valgte Saks\n");
                 break;
             case 2:
-                printf("Du valgte Papir\n");
+                printf("\nDu valgte Papir\n");
                 break;
         }
         
@@ -57,28 +61,49 @@ int main(void) {
         
         
         if (valg == cvalg) {
+            printf("\nResultat: \n");
             printf("Uafgjort\n");
+            uafgjorte ++;
         } else if(valg == 0 && cvalg == 1) {
+            printf("\nResultat: \n");
             printf("Du vandt\n");
+            vundet ++;
         } else if (valg == 1 && cvalg == 2){
+            printf("\nResultat: \n");
             printf("Du vandt\n");
+            vundet ++;
         } else if (valg == 2 && cvalg == 0){
+            printf("\nResultat: \n");
             printf("Du vandt\n");
+            vundet ++;
         } else if (valg > 2) {
+            printf("\nResultat: \n");
             printf("Ugyldigt valg\n");
         } else {
-            printf("Du vandt\n");
+            printf("\nResultat: \n");
+            printf("Du tabte\n");
+            tabte ++;
         }
         
         
-        printf("0: spil igen\n");
-        printf("1: aflsut\n");
+        printf("\n0: spil igen\n");
+        printf("1: tjek score\n");
+        printf("2: aflust spil\n");
+        printf("valg: ");
         scanf("%d", &aflustspil);
         
         if (aflustspil == 0) {
             printf("Spiller igen\n");
+        } else if (aflustspil == 1) {
+            printf("\nAntal uafgjorte: %d\n", uafgjorte);
+            printf("antal vundet: %d\n", vundet);
+            printf("Antal tabte: %d\n\n", tabte);
+            aflustspil = 0;
         } else {
             printf("Afslutter...\n");
+            printf("\nAntal uafgjorte: %d\n", uafgjorte);
+            printf("antal vundet: %d\n", vundet);
+            printf("Antal tabte: %d\n", tabte);
         }
     }
 }
