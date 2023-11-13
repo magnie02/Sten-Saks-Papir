@@ -19,7 +19,7 @@ int main(void) {
     int gemtspil = 0;
     int c;
     
-    FILE *filr = fopen("/Users/magnusnielsen/Desktop/Programering/Programering/Programering/outputfile.txt", "r");
+    FILE *filr = fopen("DinStilher.txt", "r");
     
     if (filr == NULL) {
         perror("Fejl ved at åbne filen");
@@ -149,7 +149,7 @@ int main(void) {
             printf("Antal uafgjorte: %d\n", uafgjorte);
             
             
-            FILE *filw = fopen("/Users/magnusnielsen/Desktop/Programering/Programering/Programering/outputfile.txt", "w");
+            FILE *filw = fopen("DinStilher.txt", "w");
 
 
             if (filw == NULL) {
